@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <title>{{title_page}}</title>
+    </head>
+
+    <body>
+        <header>
+            {% comment %} <img id="banner" src="{% static banner_img %}" alt="Banner"> {% endcomment %}
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id='navIndex'>
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        {% for link,name in nav  %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{link}}">{{name}}</a>
+                        </li>
+                        {%endfor%}
+                    </ul>
+                </div>
+            </nav>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container-fluid" id="home_container">
+                    <h1 class="display-4">Fluid jumbotron</h1>
+                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its
+                        parent.</p>
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <div class="container-fluid mb-5">
+                <div class="container bg-white text-dark shadow" style="margin-top:-100px">
+                    <div class="row" style="height:400px">
+                        <h1>Halo</h1>
+                    </div>
+                </div>
+                <div class="container bg-dark text-white shadow" style="margin-top:-100px">
+                    <div class="row" style="height:400px">
+                        <h1>Halo</h1>
+                    </div>
+                </div>
+                <div class="container bg-white text-dark shadow" style="margin-top:-100px">
+                    <div class="row" style="height:400px">
+                        <h1>Halo</h1>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script type="text/javascript" src="{% static 'vendor/jquery/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/popper/popper.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/bootstrap/bootstrap.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/scrolling.js' %}"></script>
+    </body>
+
+</html>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block app_css %}
+<link rel="stylesheet" href="{% static app_css %}">
+{% endblock app_css %}
+
+
+{% block jumbotron_header %}
+<h1 class="display-4">{{sub_page}}</h1>
+<p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its
+    parent.</p>
+{% endblock jumbotron_header %}
+
+
+
+{% block content_1 %}
+<div class="row" style="height:400px">
+    <h1>Content 1</h1>
+</div>
+{% endblock content_1 %}

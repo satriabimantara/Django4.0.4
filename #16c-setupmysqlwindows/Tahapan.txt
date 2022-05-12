@@ -1,0 +1,2 @@
+1. Install MySQL Installer Comunity, lakukan settings
+2. Install mysqlclient di virtual environtment melalui file wheel (install package wheel dulu di virtual environtment)

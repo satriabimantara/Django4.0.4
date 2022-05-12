@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include 'snippets/styles.html' %}
+        {% block app_css %}
+        {% endblock app_css %}
+        <title>{{title_page}}</title>
+    </head>
+
+    <body>
+        <header>
+            {% include 'snippets/navbar.html' %}
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container-fluid" id="home_container">
+
+                    {% block jumbotron_header %}
+
+                    {% endblock jumbotron_header %}
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <div class="container-fluid mb-5">
+                <div class="container bg-white text-dark shadow" style="margin-top:-100px">
+                    {% block content_1 %}
+                    {% endblock content_1 %}
+                </div>
+                <div class="container bg-dark text-white shadow" style="margin-top:-100px">
+                    {% block content_2 %}
+                    <div class="row" style="height:400px">
+                        <h1>Content 2</h1>
+                    </div>
+                    {% endblock content_2 %}
+                </div>
+            </div>
+        </main>
+        {% include 'snippets/scripts.html' %}
+    </body>
+
+</html>
