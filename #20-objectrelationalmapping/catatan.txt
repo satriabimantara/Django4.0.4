@@ -1,0 +1,32 @@
+1. Masuk ke Python shell dari terminal yang virtualEnvirontmentnya sudah aktif
+--> python manage.py shell
+
+2. Mengambil kelas Post dari blog
+--> from blog.models import Post
+
+3. Mengambil semua record dari tabel Post
+--> Post.objects.all()
+
+4. Menambahkan data baru dari terminal shell
+--> Post.objects.create(judul="Post 4", body="Selamat Siang", category="Artikel")
+
+5. Mengambil semua records dari tabel Post dan menampung ke variabel
+--> allPost = Post.objects.all()
+--> print(allPost)
+
+6. Mengambil record ke-1 dari semua records
+--> Post.objects.all()[0]
+
+7. Delete records ke-3
+--> post3 = Post.objects.all()[2]
+--> post3.delete()
+
+8. Update judul pada record ke-1
+--> post1 = Post.objects.all()[0]
+--> post1.judul = "Halo Dunia"
+--> post1.save()
+
+9. Lopping menampilkan post dari allPost
+--> for post in allPost:
+-->	print(post.judul)
+-->

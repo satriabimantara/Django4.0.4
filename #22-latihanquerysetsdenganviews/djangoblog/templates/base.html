@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{title}}</title>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/blog/jurnal/">Jurnal</a></li>
+                    <li><a href="/blog/artikel/">Artikel</a></li>
+                    <li><a href="/blog/gosip/">Gosip</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>{{sub_title}}</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquid minus, necessitatibus quod
+                atque
+                modi quasi inventore illo architecto sequi quibusdam vero saepe officiis, porro sapiente? Qui itaque
+                minus
+                nobis.</p>
+
+            {% block blog_content %}
+
+            {% endblock blog_content %}
+        </main>
+
+    </body>
+
+</html>

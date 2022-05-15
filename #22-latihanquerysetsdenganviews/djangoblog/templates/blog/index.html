@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block blog_content %}
+<h2>Blog Content</h2>
+
+{% for post in allPost %}
+<h3>{{post.judul}}</h3>
+<h4>{{post.category}}</h4>
+<h5>{{post.waktu_posting}}</h5>
+<p>
+    {{post.body}}
+</p>
+{% endfor %}
+
+{% endblock blog_content %}

@@ -1,0 +1,36 @@
+1. Masuk ke Python shell
+--> python manage.py shell
+
+2. Mengambil kelas Post dari app Blog
+--> from blog.models import Post
+
+3. Mengambil 1 row spesifik berdasarkan id (primary key): Mengambil row dengan id=5
+--> Post.objects.get(id=5)
+
+4. Mengambil 1 row spesifik berdasarkan judul: Mengambil row dengan judul=Post4
+--> Post.objects.get(judul="Post4")
+
+5. Mengambil beberapa row (>1) berdasarkan category
+--> Post.objects.filter(category="blog")
+
+6. Mengambil semua row dengan kategori kecuali "gosip"
+--> Post.objects.exclude(category="gosip")
+
+7. Python Django adalah case sensitive, untuk menghilangkan case sensitive tambahkan "__iexact" setelah key.
+7.a. Mengambil 1 row spesifik berdasarkan judul "Post4" atau "post4"
+--> Post.objects.get(judul__iexact="post4")
+--> Post.objects.get(judul__iexact="Post4")
+
+7.b Mengambil beberapa row (>1) berdasarkan kategory "Blog" atau "blog"
+--> Post.objects.filter(category__iexact="Blog")
+--> Post.objects.filter(category_iexact="blog")
+
+8. Mengurutkan berdasarkan id (ascending)
+--> Post.objects.order_by("id")
+8.a Mengurutkan berdasarkan id (descending): Menambahkan tanda '-' didepan key
+--> Post.objects.order_by("-id")
+
+9. Mengubah bentuk data yang diquery menjadi dict 
+--> Post.objects.all().values('id')
+9.a Mengubah bentuk data yang diquery menjadi list
+--> Post.objects.all().values_list('id')
