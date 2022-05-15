@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container-fluid mb-5">
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Category Post</h4>
+    </div>
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">
+            <a href="/blog/" class="nav-link">All</a>
+        </li>
+
+        {% for categoryValues in categories %}
+        <li class="list-group-item">
+            <a href="/blog/category/{{categoryValues.category}}" class="nav-link">{{categoryValues.category}}</a>
+        </li>
+        {% endfor %}
+
+
+    </ul>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        {% for post in Posts %}
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.judul}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{post.category}} | {{post.publish_time}}</h6>
+                    <p class="card-text">{{post.body|truncatechars:50}}</p>
+                    <a href="/blog/post/{{post.slug}}" class="card-link">Lihat Postingan</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

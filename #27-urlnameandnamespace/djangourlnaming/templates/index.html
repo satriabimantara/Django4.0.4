@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{title_page}}</title>
+    </head>
+
+    <body>
+        <h2>{{sub_title}}</h2>
+        {% comment %} Namespacing URL {% endcomment %}
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'blog:index' %}">Blog</a></li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores neque doloremque mollitia itaque, fugiat
+            impedit laudantium, maiores repellat quaerat nemo ad facere qui pariatur! Illum facere officia cupiditate
+            corporis veritatis.</p>
+    </body>
+
+</html>
