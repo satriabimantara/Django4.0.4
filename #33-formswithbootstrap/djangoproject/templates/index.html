@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h4>Content Home</h4>
+<form action="{% url 'index' %}" method="POST">
+    {% csrf_token %}
+    <table>
+        {{form_field.as_table}}
+    </table>
+    <button type="submit">Kirim</button>
+</form>
+{% endblock content %}

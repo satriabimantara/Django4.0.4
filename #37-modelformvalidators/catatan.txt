@@ -1,0 +1,2 @@
+1. Proses validasi suatu field dilakukan di models.py dan bukan di forms.py. Berbeda halnya kalau bukan modelform kita melakukan validasi di forms.py
+2. Semua proses validasi disimpan di dalam file validators.py dan dipanggil di models.py

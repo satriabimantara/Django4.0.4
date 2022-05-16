@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{nama}}</h2>
+<h5>{{alamat}}</h5>
+<form action="{% url 'contact:index' %}" method='post'>
+    {% csrf_token %}
+    {% comment %} <label for="nama">Nama:</label>
+    <input type="text" name="nama" id="nama">
+    <button type="submit">Kirim</button> {% endcomment %}
+    <table>
+        {{contact_form.as_table}}
+    </table>
+    <button type="submit">Kirim</button>
+</form>
+{% endblock content %}

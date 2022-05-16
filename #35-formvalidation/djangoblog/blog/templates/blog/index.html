@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block additional_navbar %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'blog:create' %}">Create</a>
+</li>
+{% endblock additional_navbar %}
+
+
+{% block content %}
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Daftar Postingan</h4>
+</div>
+<div class="row">
+
+    {% for post in post_data %}
+    <div class="col-lg-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{post.judul}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{post.category.capitalize}}</h6>
+                <p class="card-text">{{post.body|truncatechars:100}}</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+</div>
+{% endblock content %}

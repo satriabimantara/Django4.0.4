@@ -1,0 +1,26 @@
+{% extends 'blog/index.html' %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-6">
+        <form action="{% url 'blog:create' %}" method='post'>
+            {% csrf_token %}
+            <div class="form-group">
+                {{post_form.judul.label}}
+                {{post_form.judul}}
+            </div>
+            <div class="form-group">
+                {{post_form.category.label}}
+                {{post_form.category}}
+            </div>
+            <div class="form-group">
+                {{post_form.body.label}}
+                {{post_form.body}}
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">Buat</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

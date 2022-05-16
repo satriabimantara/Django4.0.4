@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{nama}}</h2>
+<h5>{{alamat}}</h5>
+<form action="{% url 'contact:index' %}" method='post'>
+    {% csrf_token %}
+    <div class="form-group">
+        {{contact_form.nama_lengkap.label_tag}}
+        {{contact_form.nama_lengkap}}
+    </div>
+    <div class="form-group">
+        {{contact_form.jenis_kelamin.label_tag}}
+        {% for component in contact_form.jenis_kelamin %}
+        <div class="form-check">
+            {{component.tag}}
+            <label for="{{component.id_for_label}}">
+                {{component.choice_label}}
+            </label>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{contact_form.tanggal_lahir.label_tag}}
+        <div class="form-row">
+            {{contact_form.tanggal_lahir}}
+        </div>
+    </div>
+    <div class="form-group">
+        {{contact_form.email.label_tag}}
+        {{contact_form.email}}
+    </div>
+    <div class="form-group">
+        {{contact_form.alamat.label_tag}}
+        {{contact_form.alamat}}
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+            {{contact_form.agreement}}
+            <label for="{{contact_form.agreement.id_for_label}}" class="form-check-label">
+                {{contact_form.agreement.label}}
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm">Kirim</button>
+</form>
+{% endblock content %}
