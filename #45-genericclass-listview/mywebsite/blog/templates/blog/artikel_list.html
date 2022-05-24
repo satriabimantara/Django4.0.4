@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{title_page}}</title>
+    </head>
+
+    <body>
+        <h1>{{sub_title_page}}</h1>
+        {% comment %} Menampilkan output ListView {% endcomment %}
+        <p>{{object_list}}</p>
+        <ol>
+
+            {% for artikel in object_list %}
+            <li>
+                {{artikel.judul_artikel}} - oleh: {{artikel.penulis_artikel}}
+                <p>
+                    {{artikel.isi_artikel}}
+                </p>
+            </li>
+            {% endfor %}
+
+        </ol>
+    </body>
+
+</html>

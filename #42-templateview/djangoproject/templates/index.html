@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% block title_page %}
+        <title>Index</title>
+        {% endblock title_page %}
+
+    </head>
+
+    <body>
+        {% include 'navbar.html' %}
+
+        {% block body_content %}
+        <h1>Halaman Index</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio neque dolorem et necessitatibus
+            sapiente vero voluptate, ea cum praesentium cumque consectetur sequi, a adipisci consequuntur odit, id
+            exercitationem aliquid porro.
+        </p>
+        {% endblock body_content %}
+    </body>
+
+</html>

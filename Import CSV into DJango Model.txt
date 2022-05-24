@@ -1,0 +1,5 @@
+https://medium.com/django-launcher/loading-csv-files-into-django-models-8d39dc08d026
+
+https://simathapa111.medium.com/how-to-upload-a-csv-file-in-django-3a0d6295f624
+
+https://myhsts.org/upload-and-process-website-cvs-file-using-python-django.html
