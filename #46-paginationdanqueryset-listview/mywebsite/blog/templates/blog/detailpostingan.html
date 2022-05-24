@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="card">
+        <h5 class="card-header">{{postingan.judul}}</h5>
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">{{postingan.category}} | {{postingan.publish_time}}</h6>
+            <p class="card-text">{{postingan.body}}</p>
+            <a href="/blog" class="btn btn-primary">Back to Blog Page</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
