@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{title_page}}</title>
+    </head>
+
+    <body>
+
+        {% block navbar %}
+        <ul>
+
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+
+        </ul>
+        {% endblock navbar %}
+
+
+        {% block content %}
+        <h4>Selamat Datang di halaman {{title_page}}</h4>
+        <h5>Halo: {{user}}</h5>
+        {% endblock content %}
+
+    </body>
+
+</html>

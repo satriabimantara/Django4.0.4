@@ -1,0 +1,38 @@
+{% extends 'blog/index.html' %}
+
+
+{% block content %}
+<div class="container-fluid mb-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card">
+                <h5 class="card-header">{{object.judul_artikel}}</h5>
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted"> {{object.publish_artikel}}</h6>
+                    <p class="card-text">{{object.isi_artikel}}</p>
+                    <a href="{% url 'blog:list' 'all' %}" class="btn btn-primary">Back to Blog Page</a>
+                    <a href="{% url 'blog:update' object.pk %}" class="btn btn-warning">Update</a>
+                    <a href="{% url 'blog:delete' object.pk %}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="alert alert-primary" role="alert">
+                <h4 class="alert-heading">Artikel Lainnya</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+
+                {% for article in another_articles %}
+                <li class="list-group-item">
+                    <a href="{% url 'blog:detail' article.slug %}"
+                        class=" list-group-item-action">{{article.judul_artikel}} - oleh:
+                        {{article.penulis_artikel}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+{% endblock content %}

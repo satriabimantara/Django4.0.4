@@ -1,0 +1,57 @@
+{% extends 'artikel/index.html' %}
+
+{% block sub_leftbar %}
+<div class="row mt-5">
+    <div class="col">
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Kategori Artikel</h4>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <ul class="list-group list-group-flush">
+
+            {% for kategori in kategori_list %}
+            <a href="{% url 'artikel:kategori' kategori 1 %}"
+                class="list-group-item list-group-item-action">{{kategori}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col">
+        <div class="alert alert-warning" role="alert">
+            <h4 class="alert-heading">Artikel Serupa</h4>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <ul class="list-group list-group-flush">
+
+            {% for artikel in artikel_serupa %}
+            <a href="{% url 'artikel:detail' artikel.id %}" class="list-group-item list-group-item-action"><span
+                    class="font-weight-bold">{{artikel.judul}}</span> | {{artikel.published}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock sub_leftbar %}
+
+
+{% block sub_content %}
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <h5 class="card-header">{{artikel_detail.judul}}</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">{{artikel_detail.kategori}} | {{artikel_detail.published}}
+                </h6>
+                <p class="card-text">{{artikel_detail.isi}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock sub_content %}

@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+<h3>Logout</h3>
+<form method="POST">
+    {% csrf_token %}
+    <p>Apakah Anda yakin ingin keluar dari halaman ini?</p>
+    <button type="submit" name='logout' value='Submit'>Kirim</button>
+</form>
+{% endblock content %}

@@ -1,0 +1,91 @@
+{% extends 'artikel/index.html' %}
+
+
+{% block sub_leftbar %}
+<div class="row mt-5">
+    <div class="col">
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Kategori Artikel</h4>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <ul class="list-group list-group-flush">
+
+            {% for kategori in kategori_list %}
+            <a href="{% url 'artikel:kategori' kategori 1 %}"
+                class="list-group-item list-group-item-action">{{kategori}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock sub_leftbar %}
+
+{% block sub_content %}
+<div class="row">
+    {% if is_paginated %}
+    <div class="row">
+        <div class="col">
+            <nav aria-label="artikelPage">
+                <ul class="pagination">
+
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="{% url 'artikel:list' page_obj.previous_page_number %}">Previous</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled ">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    {% endif %}
+
+
+                    {% for page_i in paginator.page_range %}
+
+                    {% if page_i is page_obj.number %}
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">{{page_i}}<span class="sr-only">(current)</span></a>
+                    </li>
+                    {% else %}
+                    <li class="page-item"><a class="page-link" href="{% url 'artikel:list' page_i %}">{{page_i}}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="{% url 'artikel:list' page_obj.next_page_number %}">Next</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled ">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    {% endif %}
+    <div class="row">
+        {% for artikel in artikel_list %}
+        <div class="col-lg-6 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{artikel.judul}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{artikel.kategori}} | {{artikel.published}}</h6>
+                    <p class="card-text">{{artikel.isi|truncatewords:10}}</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'artikel:detail' artikel.id %}" class="card-link">Lihat selengkapnya</a>
+                        <a href="{% url 'artikel:update' artikel.id %}" class="card-link">Update</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock sub_content %}

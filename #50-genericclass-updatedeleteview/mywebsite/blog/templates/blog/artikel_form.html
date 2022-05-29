@@ -1,0 +1,22 @@
+{% extends 'blog/index.html' %}
+
+
+{% block content %}
+<div class="container-fluid mb-5">
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-primary" role="alert">
+                <h4 class="alert-heading">Tambah Artikel</h4>
+            </div>
+            <form method='post'>
+                {% csrf_token %}
+                <table>
+                    {{form.as_table}}
+                </table>
+                <button type="submit">Kirim</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

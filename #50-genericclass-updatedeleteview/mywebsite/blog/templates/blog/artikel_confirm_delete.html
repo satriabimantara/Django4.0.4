@@ -1,0 +1,19 @@
+{% extends 'blog/index.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="card">
+        <h5 class="card-header">Konfirmasi Hapus Artikel</h5>
+        <div class="card-body">
+            <h5 class="card-title">Apakah Anda yakin ingin menghapus artikel ini?</h5>
+            <p class="card-text">{{object}}</p>
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                <a href="{% url 'blog:list' 'all' %}" class="btn btn-secondary btn-sm">Kembali</a>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

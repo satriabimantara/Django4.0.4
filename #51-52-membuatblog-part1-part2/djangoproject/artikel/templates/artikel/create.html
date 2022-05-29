@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4>{{subtitle_page}}</h4>
+<form method='POST'>
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="{{form.judul.id_for_label}}">{{form.judul.label.capitalize}}</label>
+        <input type="text" class="form-control" id="{{form.judul.id_for_label}}" required maxlength="{{form.judul.max}}"
+            name="{{form.judul.name}}" value="{{form.judul.value}}">
+    </div>
+    <div class="form-group">
+        <label for="{{form.kategori.id_for_label}}">{{form.kategori.name.capitalize}}</label>
+        {{form.kategori}}
+    </div>
+    <div class="form-group">
+        <label for="{{form.isi.id_for_label}}">{{form.isi.label.capitalize}}</label>
+        <textarea class="form-control" id="{{form.isi.id_for_label}}" rows="10" required name="{{form.isi.name}}"
+            maxlength="{{form.isi.max}}">{{form.isi.value}}</textarea>
+    </div>
+    <button type="submit" class='btn {{button.button_color}} btn-sm'>{{button.button_name}}</button>
+    <a href="{% url 'artikel:manage' %}" class='btn btn-secondary btn-sm'>Kembali</a>
+</form>
+{% endblock content %}

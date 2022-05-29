@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Halaman Artikel</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+        featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-primary" role="alert">
+                        <h4 class="alert-heading">Menu Artikel</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="list-group">
+                        <a href="{% url 'artikel:index' %}" class="list-group-item list-group-item-action">Artikel
+                            Dashboard</a>
+                        <a href="{% url 'artikel:list' 1 %}" class="list-group-item list-group-item-action">List
+                            Artikel</a>
+                    </div>
+                </div>
+            </div>
+
+            {% block sub_leftbar %}
+
+            {% endblock sub_leftbar %}
+
+        </div>
+        <div class="col-lg-9">
+
+            {% block sub_content %}
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque nesciunt nihil obcaecati
+                fugiat odit amet. Cumque quod beatae autem ratione ea aut repudiandae amet provident, architecto quas
+                ipsum minus!
+            </p>
+            {% endblock sub_content %}
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

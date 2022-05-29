@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Article Delete Confirmation</h1>
+    <p class="lead">Apakah Anda yakin ingin menghapus artikel ini? Semua data tidak bisa dikembalikan seperti semula</p>
+    <hr class="my-4">
+    <p><span class="font-weight-bold">Judul:</span> {{artikel_deleted.judul}}</p>
+    <p><span class="font-weight-bold">Isi:</span> {{artikel_deleted.isi|truncatewords:10}}</p>
+    <p><span class="font-weight-bold">Published:</span> {{artikel_deleted.published|date}}</p>
+    <form method="POST">
+        {% csrf_token %}
+        <a href="{% url 'artikel:manage' %}" class='btn btn-secondary btn-sm'>Kembali</a>
+        <button type="submit" class='btn btn-danger btn-sm'>Hapus</button>
+    </form>
+</div>
+{% endblock content %}
