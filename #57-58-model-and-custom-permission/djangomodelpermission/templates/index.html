@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Home Page</h1>
+<h2>Selamat datang {{user}}</h2>
+<ul>
+    <li><a href="{% url 'blog:index' %}">List Artikel</a></li>
+    <li><a href="{% url 'blog:add' %}">Add Artikel</a></li>
+</ul>
+{% endblock content %}

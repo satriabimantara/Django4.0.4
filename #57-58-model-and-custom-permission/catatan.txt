@@ -1,0 +1,14 @@
+A. Custom Permission
+Kita bisa membuat custom permission untuk model yang sudah dibuat selain (add, change, delete). Kita bisa membuat custom permission di bagian class Meta model
+1. Ketika permission default (add, change, delete) sudah termigration di awal dan kita hanya ingin menyisakan (add) saja, maka kita harus merefresh permission model dari awal untuk daftar aplikasi berikut:
+[admin',auth',contenttypes',sessions','<our_app_name>']
+hal itu dilakukan dengan cara:
+--> python manage.py migrate admin zero
+--> python manage.py migrate auth zero
+--> python manage.py migrate contenttypes zero
+--> python manage.py migrate sessions zero
+--> python manage.py migrate <our_app_name> zero
+
+Kemudian jalankan makemigrations dan migrate dari awal kembali. Createsuperuser dan create user dari awal kembali.
+Kita bisa melihat daftar migrasi apa saja yang sudah dilakukan dengan cara:
+--> python manage.py showmigrations

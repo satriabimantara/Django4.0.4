@@ -1,0 +1,20 @@
+username: superuser
+password: validadmin123
+email: superuser@gmail.com
+
+
+------ User 1
+username: antonio_blanco
+password: blanco12345
+
+----- User 2
+username: satriabimantara
+password: bimbim200
+
+----- User 3
+username: satria
+password: bimbim200
+
+----- User 4
+username: budiman
+password: python123

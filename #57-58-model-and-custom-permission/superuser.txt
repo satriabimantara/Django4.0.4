@@ -1,0 +1,23 @@
+====== SUPERUSER ======
+
+username: superuser
+email: superuser@gmail.com
+password: validadmin123
+
+
+
+====== STAFF USER 1 =====
+username: satria
+password: bimbim200
+desciptions: [
+    1. This user have one permissions i.e (can add blog|artikel) a.k.a Penulis 
+    2. This user is a staff account
+]
+
+====== STAFF USER 2 =====
+username: user1
+password: validadmin123
+desciptions: [
+    1. This user have three permissions i.e (can add, change, and publish artikel blog|artikel) a.k.a Editor
+    2. This user is a staff account
+]

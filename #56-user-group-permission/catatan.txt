@@ -1,0 +1,9 @@
+Modul ini berisi materi tentang:
+1. Permission Check
+--> Mengatur view-view mana saja yang bisa ditampilkan berdasarkan user yang login
+
+2. User and Group Permission
+--> Mengelompokkan user-user menjadi satu group tertentu berdasarkan projek yang ingin dibuat. Masuk ke menu admin untuk bisa menambahkan group dari user-user.
+Pada contoh kali ini akan dibuat tiga buah group:
+a. Group Penulis
+
